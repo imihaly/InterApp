@@ -7,7 +7,7 @@ The approach is based on services and provides an unified way to call services i
 ## Usage
 Register a service:
 ```objective-c
-    [[IAServiceManager sharedManager] registerService:self forSelector:@"alert://show"];
+[[IAServiceManager sharedManager] registerService:self forSelector:@"alert://show"];
 ```
 
 Call a service:
