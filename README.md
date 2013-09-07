@@ -20,9 +20,9 @@ Call a service:
 ```
 
 ## Some details
-`proxyToService:serviceSelector` returns an proxy instance which records all selectors called on it (except `invoke`),
-and finally on the proxy's dealloc or on explicitelly calloed `invoke` the recorded sequence will be invoked.
+`proxyToService:serviceSelector` returns a proxy instance which records all selectors called on it (except `invoke`),
+and finally on the proxy's dealloc or on explicitly called `invoke` the recorded sequence will be invoked.
 
-The invokation will be handled either locally if there is any matching service recorded or by forming an appropiate url and passing the request to any other installed application which registered the used URL scheme and can handle the request.
+The invocation will be handled either - locally if there is any matching service recorded - or by forming an appropiate url and passing the request to any other installed application which registered the used URL scheme and can handle the request.
 
 See the working sample applications and the library code for more details.
