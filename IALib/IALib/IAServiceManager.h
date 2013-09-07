@@ -16,7 +16,7 @@
 - (BOOL)handleUrl:(NSURL *)url;
 
 - (void)registerService:(id)service forSelector:(NSString *)selector;
-- (void)removeServiceForSelectro:(NSString *)selector;
+- (void)removeServiceForSelector:(NSString *)selector;
 
 @end
 

@@ -46,7 +46,7 @@
 	self.services[selector] = service;
 }
 
-- (void)removeServiceForSelectro:(NSString *)selector {
+- (void)removeServiceForSelector:(NSString *)selector {
 	[self.services removeObjectForKey:selector];
 }
 
