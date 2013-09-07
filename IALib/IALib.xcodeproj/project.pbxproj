@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF9DCCCE17DBB5D50003FE1A /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9DCCCD17DBB5D50003FE1A /* NSString+URLEncoding.m */; };
 		CFB780AD17DA74E700877920 /* IAPlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB780AA17DA74E700877920 /* IAPlayerTest.m */; };
 		CFB780AE17DA74E700877920 /* IAURLInvocationCoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB780AC17DA74E700877920 /* IAURLInvocationCoderTest.m */; };
 		CFB780BD17DA761A00877920 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB780BA17DA759200877920 /* libOCMock.a */; };
@@ -76,6 +77,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF9DCCCC17DBB5D50003FE1A /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		CF9DCCCD17DBB5D50003FE1A /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		CFB780A917DA74E700877920 /* IAPlayerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPlayerTest.h; sourceTree = "<group>"; };
 		CFB780AA17DA74E700877920 /* IAPlayerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPlayerTest.m; sourceTree = "<group>"; };
 		CFB780AB17DA74E700877920 /* IAURLInvocationCoderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAURLInvocationCoderTest.h; sourceTree = "<group>"; };
@@ -103,7 +106,6 @@
 		CFFCCC5C17D9CECD00D62838 /* IAURLInvocationCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAURLInvocationCoder.m; sourceTree = "<group>"; };
 		CFFCCC5D17D9CECD00D62838 /* NSInvocation+IAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+IAHelper.h"; sourceTree = "<group>"; };
 		CFFCCC5E17D9CECD00D62838 /* NSInvocation+IAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+IAHelper.m"; sourceTree = "<group>"; };
-		CFFCCC5F17D9CECD00D62838 /* NSInvocationCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSInvocationCoder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +180,6 @@
 				CFFCCC5817D9CECD00D62838 /* IARecorder.m */,
 				CFFCCC5517D9CECD00D62838 /* IAPlayer.h */,
 				CFFCCC5617D9CECD00D62838 /* IAPlayer.m */,
-				CFFCCC5F17D9CECD00D62838 /* NSInvocationCoder.h */,
 				CFFCCC5B17D9CECD00D62838 /* IAURLInvocationCoder.h */,
 				CFFCCC5C17D9CECD00D62838 /* IAURLInvocationCoder.m */,
 				CFFCCC5317D9CECD00D62838 /* IAHelper.h */,
@@ -187,6 +188,8 @@
 				CFFCCC5E17D9CECD00D62838 /* NSInvocation+IAHelper.m */,
 				CFB780BE17DB3E9C00877920 /* IAServiceProxy.h */,
 				CFB780BF17DB3E9C00877920 /* IAServiceProxy.m */,
+				CF9DCCCC17DBB5D50003FE1A /* NSString+URLEncoding.h */,
+				CF9DCCCD17DBB5D50003FE1A /* NSString+URLEncoding.m */,
 				CFFCCBC117D9CDEE00D62838 /* Supporting Files */,
 			);
 			path = IALib;
@@ -358,6 +361,7 @@
 				CFFCCC6817D9CECD00D62838 /* IAURLInvocationCoder.m in Sources */,
 				CFFCCC6A17D9CECD00D62838 /* NSInvocation+IAHelper.m in Sources */,
 				CFB780C017DB3E9C00877920 /* IAServiceProxy.m in Sources */,
+				CF9DCCCE17DBB5D50003FE1A /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +487,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IALib/IALib-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../../ocmock/**";
+				HEADER_SEARCH_PATHS = "../ocmock/**";
 				INFOPLIST_FILE = "IALibTests/IALibTests-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,7 +504,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IALib/IALib-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../../ocmock/**";
+				HEADER_SEARCH_PATHS = "../ocmock/**";
 				INFOPLIST_FILE = "IALibTests/IALibTests-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

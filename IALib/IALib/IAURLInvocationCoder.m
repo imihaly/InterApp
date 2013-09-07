@@ -10,6 +10,7 @@
 #import "IAURLInvocationCoder.h"
 #import "IAHelper.h"
 #import "NSInvocation+IAHelper.h"
+#import "NSString+URLEncoding.h"
 #import <Foundation/Foundation.h>
 
 @implementation IAURLInvocationCoder
@@ -17,11 +18,12 @@
 - (id)encodeInvocations:(NSArray *)invocations {
 	id JSONObject = [self JSONObjectFromInvocations:invocations];
 	
+	if(![NSJSONSerialization isValidJSONObject:JSONObject]) return nil;
 	NSData *data = [NSJSONSerialization dataWithJSONObject:JSONObject
 												   options:0
 													 error:NULL];
 	NSString *seq = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	NSString *encSeq = [seq stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString *encSeq = seq.URLEncodedString;
 	NSMutableString *urlString = [NSMutableString stringWithFormat:@"seq=%@", encSeq];
 	
 	return urlString;
@@ -31,7 +33,7 @@
 	NSRange range = [encodedInvocations rangeOfString:@"seq="];
 	if(range.length == 0) return nil;
 	NSString *encSeq = [encodedInvocations substringFromIndex:range.length];
-	NSString *seq = [encSeq stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString *seq = encSeq.URLDecodedString;
 	NSData *data = [seq dataUsingEncoding:NSUTF8StringEncoding];
 	
 	id JSONObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
@@ -68,6 +70,7 @@
 	for(int idx = 2; idx < signature.numberOfArguments; idx++) {
 		__unsafe_unretained id param;
 		[invocation getArgument:&param atIndex:idx];
+		if(param == nil) param = [NSNull null];
 		[array addObject:param];
 	}
 	
@@ -84,6 +87,7 @@
 	NSMethodSignature *signature = invocation.methodSignature;
 	for(int idx = 2; idx < signature.numberOfArguments; idx++) {
 		id param = array[idx - 1];
+		if(param == [NSNull null]) param = nil;
 		[invocation setArgument:&param atIndex:idx];
 	}
 	[invocation retainArguments];

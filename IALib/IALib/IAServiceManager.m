@@ -99,6 +99,10 @@
 	
 	IAURLInvocationCoder *coder = [IAURLInvocationCoder new];
 	NSString *encodedInvocations = [coder encodeInvocations:recorder.invocations];
+	if(!encodedInvocations) {
+		NSLog(@"Could not encode the invocations!");
+		return;
+	};
 	NSString *urlString = [NSString stringWithFormat:@"%@?%@", recorder.serviceSelector, encodedInvocations];
 	NSURL *url = [NSURL URLWithString:urlString];
 	[[UIApplication sharedApplication] openURL:url];

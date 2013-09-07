@@ -9,6 +9,7 @@
 #import "IAURLInvocationCoderTest.h"
 #import "IAURLInvocationCoder.h"
 #import "NSInvocation+IAHelper.h"
+#import "NSString+URLEncoding.h"
 #import "OCMock.h"
 
 @protocol TestProtocol <NSObject>
@@ -30,7 +31,7 @@
 		[NSInvocation invocationWithSelector:@selector(doSomething)]
 	];
 	NSString *encoded = [self.coder encodeInvocations:invocations];
-	NSString *expected = [self encodedJSON:@"seq=[[\"doSomething\"]]"];
+	NSString *expected = [self encodedJSON:@"[[\"doSomething\"]]"];
 	STAssertEqualObjects(encoded, expected, @"Invalid url!");
 }
 
@@ -39,7 +40,7 @@
 		[NSInvocation invocationWithSelector:@selector(doSomethingWith:) andArguments:@"something", nil]
 	];
 	NSString *encoded = [self.coder encodeInvocations:invocations];
-	NSString *expected = [self encodedJSON:@"seq=[[\"doSomethingWith:\",\"something\"]]"];
+	NSString *expected = [self encodedJSON:@"[[\"doSomethingWith:\",\"something\"]]"];
 	STAssertEqualObjects(encoded, expected, @"Invalid url!");
 }
 
@@ -49,7 +50,7 @@
 		[NSInvocation invocationWithSelector:@selector(doSomethingWith:and:) andArguments:@"something", @"other", nil],
 	];
 	NSString *encoded = [self.coder encodeInvocations:invocations];
-	NSString *expected = [self encodedJSON:@"seq=[[\"doSomethingWith:\",\"something\"],[\"doSomethingWith:and:\",\"something\",\"other\"]]"];
+	NSString *expected = [self encodedJSON:@"[[\"doSomethingWith:\",\"something\"],[\"doSomethingWith:and:\",\"something\",\"other\"]]"];
 	STAssertEqualObjects(encoded, expected, @"Invalid url!");
 }
 
@@ -58,7 +59,7 @@
 }
 
 - (NSString *)encodedJSON:(NSString *)JSON {
-	return [JSON stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	return [NSString stringWithFormat:@"seq=%@", JSON.URLEncodedString];
 }
 
 @end

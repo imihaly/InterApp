@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSInvocationCoder.h"
 
-@interface IAURLInvocationCoder : NSObject<NSInvocationCoder>
+@interface IAURLInvocationCoder : NSObject
+
+- (id)encodeInvocations:(NSArray *)invocations;
+- (NSArray *)decodeInvocations:(id)encodedInvocations;
 
 @end

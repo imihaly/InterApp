@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF9DCCD417DBB8D30003FE1A /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9DCCD317DBB8D30003FE1A /* NSString+URLEncoding.m */; };
 		CFB7808E17DA3F2700877920 /* IAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7808117DA3F2700877920 /* IAHelper.m */; };
 		CFB7808F17DA3F2700877920 /* IAPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7808417DA3F2700877920 /* IAPlayer.m */; };
 		CFB7809017DA3F2700877920 /* IARecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7808617DA3F2700877920 /* IARecorder.m */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF9DCCD217DBB8D30003FE1A /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		CF9DCCD317DBB8D30003FE1A /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		CFB7808017DA3F2700877920 /* IAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAHelper.h; sourceTree = "<group>"; };
 		CFB7808117DA3F2700877920 /* IAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAHelper.m; sourceTree = "<group>"; };
 		CFB7808217DA3F2700877920 /* IALib-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IALib-Prefix.pch"; sourceTree = "<group>"; };
@@ -42,7 +45,6 @@
 		CFB7808A17DA3F2700877920 /* IAURLInvocationCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAURLInvocationCoder.m; sourceTree = "<group>"; };
 		CFB7808B17DA3F2700877920 /* NSInvocation+IAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+IAHelper.h"; sourceTree = "<group>"; };
 		CFB7808C17DA3F2700877920 /* NSInvocation+IAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+IAHelper.m"; sourceTree = "<group>"; };
-		CFB7808D17DA3F2700877920 /* NSInvocationCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSInvocationCoder.h; sourceTree = "<group>"; };
 		CFB780C517DB425400877920 /* IAServiceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAServiceProxy.h; sourceTree = "<group>"; };
 		CFB780C617DB425400877920 /* IAServiceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAServiceProxy.m; sourceTree = "<group>"; };
 		CFFCCBEF17D9CE2100D62838 /* IASender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IASender.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,8 @@
 		CFB7807F17DA3F2700877920 /* IALib */ = {
 			isa = PBXGroup;
 			children = (
+				CF9DCCD217DBB8D30003FE1A /* NSString+URLEncoding.h */,
+				CF9DCCD317DBB8D30003FE1A /* NSString+URLEncoding.m */,
 				CFB780C517DB425400877920 /* IAServiceProxy.h */,
 				CFB780C617DB425400877920 /* IAServiceProxy.m */,
 				CFB7808017DA3F2700877920 /* IAHelper.h */,
@@ -97,7 +101,6 @@
 				CFB7808A17DA3F2700877920 /* IAURLInvocationCoder.m */,
 				CFB7808B17DA3F2700877920 /* NSInvocation+IAHelper.h */,
 				CFB7808C17DA3F2700877920 /* NSInvocation+IAHelper.m */,
-				CFB7808D17DA3F2700877920 /* NSInvocationCoder.h */,
 			);
 			name = IALib;
 			path = ../../IALib/IALib;
@@ -237,6 +240,7 @@
 				CFB7809217DA3F2700877920 /* IAURLInvocationCoder.m in Sources */,
 				CFB7809317DA3F2700877920 /* NSInvocation+IAHelper.m in Sources */,
 				CFB780C717DB425400877920 /* IAServiceProxy.m in Sources */,
+				CF9DCCD417DBB8D30003FE1A /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
