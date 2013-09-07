@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Encodes a set of invocations into a url-encoded string which can be passed as argument for a GET request.
+ Each invocation has to have object arguments and must return an object. Also, each argument must be serializable using NSJSONSerialization.
+ */
 @interface IAURLInvocationCoder : NSObject
 
 - (id)encodeInvocations:(NSArray *)invocations;

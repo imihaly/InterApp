@@ -18,14 +18,20 @@
 
 @implementation IARecorder
 
+#pragma mark - memory management
+
 - (id)init {
 	self.recordedInvocations = [NSMutableArray arrayWithCapacity:0];
 	return self;
 }
 
+#pragma mark - public methodes
+
 - (NSArray *)invocations {
 	return [NSArray arrayWithArray:self.recordedInvocations];
 }
+
+#pragma mark - NSProxy
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
 	NSInvocation *copiedInvocation = [NSInvocation invocationWithInvocation:invocation];

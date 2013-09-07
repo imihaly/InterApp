@@ -18,6 +18,8 @@
 
 @implementation IAServiceManager
 
+#pragma mark - singleton interface
+
 + (instancetype)sharedManager {
 	static IAServiceManager *sharedManager = nil;
 	if(!sharedManager) {
@@ -26,6 +28,7 @@
 	return sharedManager;
 }
 
+#pragma mark - memory management
 
 - (id)init {
 	self = [super init];

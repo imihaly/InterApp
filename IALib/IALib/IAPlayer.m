@@ -9,12 +9,12 @@
 #import "IAPlayer.h"
 
 @interface IAPlayer()
-
 @property(nonatomic, assign) id target;
-
 @end
 
 @implementation IAPlayer
+
+#pragma mark - memory management
 
 - (id)initWithTarget:(id)target {
 	self = [super init];
@@ -23,6 +23,8 @@
 	}
 	return self;
 }
+
+#pragma mark - public operations
 
 - (id)playInvocations:(NSArray *)invocations {
 	__unsafe_unretained id target = self.target;
